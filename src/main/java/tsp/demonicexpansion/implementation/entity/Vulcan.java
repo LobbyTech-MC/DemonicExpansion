@@ -4,6 +4,7 @@ import org.bukkit.NamespacedKey;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.MagmaCube;
 import org.bukkit.entity.Projectile;
+import org.bukkit.event.entity.EntityDamageEvent;
 import tsp.demonicexpansion.DemonicExpansion;
 import tsp.smartplugin.event.LivingEntityDamageByLivingEntityEvent;
 
@@ -48,7 +49,7 @@ public class Vulcan extends DemonicEntity {
 
     @Override
     public void onDamageReceived(LivingEntityDamageByLivingEntityEvent event) {
-        if (event.getDamager() instanceof Projectile) {
+        if (event.getCause() == EntityDamageEvent.DamageCause.PROJECTILE) {
             event.setCancelled(true);
             DemonicExpansion.getInstance().getLog().trace("Blocked vulcan projectile: " + event.getDamager().getName());
         }

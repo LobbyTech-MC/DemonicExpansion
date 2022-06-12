@@ -34,7 +34,6 @@ public class Items {
             "&7Right-Click to travel to the nether and back. (60s)"
     );
 
-
     public final DemonicItemStack NAPALM = new DemonicItemStack(
             "NAPALM",
             Material.GREEN_DYE,

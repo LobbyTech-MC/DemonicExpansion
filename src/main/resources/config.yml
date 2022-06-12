@@ -5,4 +5,4 @@ ticker:
   armor: 1
 
 # Debug Mode
-debug: true
+debug: false
