@@ -15,7 +15,6 @@ import java.util.function.Consumer;
 /**
  * Easy way of creating {@link SlimefunItemStack} for this addon.
  */
-// TODO: Remove unused constructors
 public class DemonicItemStack extends SlimefunItemStack {
 
     public DemonicItemStack(@Nonnull String id, @Nonnull ItemStack item) {

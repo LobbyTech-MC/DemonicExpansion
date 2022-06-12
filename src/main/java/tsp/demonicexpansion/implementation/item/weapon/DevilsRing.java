@@ -28,9 +28,10 @@ public class DevilsRing extends DemonicWeapon implements Unburnable {
 
     @Override
     public void onRightClick(PlayerRightClickEvent event) {
-        ItemUtils.use(event.getItem(), 30, cd -> {
+        ItemUtils.use(event.getItem(), 60, cd -> {
             for (LivingEntity entity : Utils.getNearbyLivingEntities(event.getPlayer(), 5)) {
                 entity.addPotionEffects(effects);
+                entity.setFireTicks(40);
             }
             event.getPlayer().playSound(event.getPlayer().getLocation(), Sound.ENTITY_ELDER_GUARDIAN_CURSE, 1f, 1f);
         }, left -> PlayerUtils.sendMessage(event.getPlayer(), "&cYou can not use this for another: &e" + left + "s")); // No sound because it would be deafening when spammed on cooldown.

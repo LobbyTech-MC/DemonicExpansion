@@ -47,13 +47,7 @@ public class Vulcan extends DemonicEntity {
     }
 
     @Override
-    public void onDamageDealt(LivingEntityDamageByLivingEntityEvent event) {
-        System.out.println("vulcan dealt damage: " + event.getFinalDamage());
-    }
-
-    @Override
     public void onDamageReceived(LivingEntityDamageByLivingEntityEvent event) {
-        System.out.println("cause: " + event.getCause().name() + " | amount: " + event.getFinalDamage());
         if (event.getDamager() instanceof Projectile) {
             event.setCancelled(true);
             DemonicExpansion.getInstance().getLog().trace("Blocked vulcan projectile: " + event.getDamager().getName());

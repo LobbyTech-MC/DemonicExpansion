@@ -13,7 +13,6 @@ public class EntityCombustListener extends Handler {
     public void onEntityCombust(EntityCombustEvent event) {
         if (event.getEntity() instanceof Item item) {
             if (SlimefunItem.getByItem(item.getItemStack()) instanceof Unburnable) {
-                System.out.println("cancelled burning of item: " + item.getItemStack().getType().name());
                 event.setCancelled(true);
             }
         }

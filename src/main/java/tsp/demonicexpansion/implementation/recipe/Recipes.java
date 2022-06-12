@@ -28,6 +28,12 @@ public final class Recipes {
             items.DEMONIC_ESSENCE, SlimefunItems.ENRICHED_NETHER_ICE, items.DEMONIC_ESSENCE
     });
 
+    public static final DemonicRecipe NAPALM = new DemonicRecipe(RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[]{
+            SlimefunItems.SILICON, new ItemStack(Material.TNT), SlimefunItems.SILICON,
+            new ItemStack(Material.TNT), SlimefunItems.FUEL_BUCKET, new ItemStack(Material.TNT),
+            SlimefunItems.SILICON, new ItemStack(Material.TNT), SlimefunItems.SILICON
+    });
+
     // Armor
 
     public static final DemonicRecipe DEMONIC_HELMET = new DemonicRecipe(RecipeType.ANCIENT_ALTAR, new ItemStack[]{
@@ -58,7 +64,7 @@ public final class Recipes {
 
     public static final DemonicRecipe DEVILS_RING = new DemonicRecipe(RecipeType.ANCIENT_ALTAR, new ItemStack[]{
             SlimefunItems.STRANGE_NETHER_GOO, items.DEMONIC_ESSENCE, SlimefunItems.STRANGE_NETHER_GOO,
-            items.DEMONIC_ESSENCE, SlimefunItems.FIRE_RUNE, items.DEMONIC_ESSENCE,
+            items.DEMONIC_ESSENCE, items.NAPALM, items.DEMONIC_ESSENCE,
             SlimefunItems.STRANGE_NETHER_GOO, items.DEMONIC_ESSENCE, SlimefunItems.STRANGE_NETHER_GOO
     }); // TODO: better recipe
 
