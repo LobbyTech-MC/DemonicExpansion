@@ -23,6 +23,11 @@ public class Necromancer extends DemonicEntity {
     }
 
     @Override
+    public double getArmor() {
+        return 40d;
+    }
+
+    @Override
     public void preSpawn(LivingEntity entity) {
         PigZombie zombie = (PigZombie) entity;
         zombie.setAngry(true);

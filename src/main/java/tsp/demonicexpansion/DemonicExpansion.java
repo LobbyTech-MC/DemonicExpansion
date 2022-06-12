@@ -10,6 +10,7 @@ import tsp.demonicexpansion.implementation.item.Items;
 import tsp.demonicexpansion.implementation.research.Researches;
 import tsp.demonicexpansion.listener.EntityCombustListener;
 import tsp.demonicexpansion.listener.EntityDamageListener;
+import tsp.demonicexpansion.listener.EntitySpawnListener;
 import tsp.demonicexpansion.listener.EntityTargetListener;
 import tsp.demonicexpansion.task.ArmorTask;
 import tsp.demonicexpansion.task.EntityTask;
@@ -33,9 +34,10 @@ public class DemonicExpansion extends SmartPlugin implements SlimefunAddon {
         instance = this;
         this.logger = new Logger(getConfig().getBoolean("debug"));
         logger.info("Loading DemonicExpansion - " + getPluginVersion());
-        Groups.MAIN.register(DemonicExpansion.getInstance());
+        saveDefaultConfig();
 
         logger.debug("Loading items...");
+        Groups.MAIN.register(DemonicExpansion.getInstance());
         this.items = new Items();
         items.setup();
 
@@ -51,6 +53,7 @@ public class DemonicExpansion extends SmartPlugin implements SlimefunAddon {
         new EntityDamageByEntityListener();
         new EntityDamageListener();
         new EntityTargetListener();
+        new EntitySpawnListener();
 
         new ArmorTask().schedule(this);
         new EntityTask().schedule(this);

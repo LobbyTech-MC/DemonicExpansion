@@ -52,7 +52,7 @@
         <dependency>
             <groupId>com.github.TheSilentPro</groupId>
             <artifactId>SmartPlugin</artifactId>
-            <version>fb00e8a5fe</version>
+            <version>96fe3b0d59</version>
         </dependency>
     </dependencies>
 

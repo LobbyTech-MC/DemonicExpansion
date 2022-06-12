@@ -9,15 +9,15 @@ import org.bukkit.block.Block;
 import org.bukkit.block.data.Levelled;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
-import org.bukkit.inventory.ItemStack;
 import tsp.demonicexpansion.DemonicExpansion;
+import tsp.demonicexpansion.implementation.recipe.Recipes;
 
 public class DemonicBoots extends DemonicArmor {
 
     private final ItemSetting<Integer> radiusSetting = new IntRangeSetting(this, "radius", 1, 2, 100);
 
     public DemonicBoots() {
-        super(DemonicExpansion.getInstance().getItems().DEMONIC_BOOTS, new ItemStack(Material.NETHERITE_BOOTS));
+        super(DemonicExpansion.getInstance().getItems().DEMONIC_BOOTS, Recipes.DEMONIC_BOOTS);
         addItemSettings(radiusSetting);
     }
 

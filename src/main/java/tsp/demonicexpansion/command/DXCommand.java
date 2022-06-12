@@ -22,7 +22,7 @@ public class DXCommand extends SmartCommand {
             PlayerUtils.sendMessage(player, "&cYou need to specify an entity! Usage: &e/dx <entity>");
         }
 
-        String name = args[1];
+        String name = args[0];
         if (name.equalsIgnoreCase("necromancer")) {
             Entities.NECROMANCER.spawn(player.getLocation());
         } else if (name.equalsIgnoreCase("reaper")) {

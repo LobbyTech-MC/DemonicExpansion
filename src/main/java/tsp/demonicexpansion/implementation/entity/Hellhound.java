@@ -65,7 +65,7 @@ public class Hellhound extends DemonicEntity {
 
     @Override
     public void onDamageDealt(LivingEntityDamageByLivingEntityEvent event) {
-        event.getEntity().setFireTicks(40);
+        event.getVictim().setFireTicks(40);
     }
 
     @Override

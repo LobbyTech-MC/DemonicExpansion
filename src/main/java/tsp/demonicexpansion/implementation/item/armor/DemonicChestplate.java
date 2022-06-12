@@ -1,16 +1,15 @@
 package tsp.demonicexpansion.implementation.item.armor;
 
-import org.bukkit.Material;
 import org.bukkit.entity.LivingEntity;
-import org.bukkit.inventory.ItemStack;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 import tsp.demonicexpansion.DemonicExpansion;
+import tsp.demonicexpansion.implementation.recipe.Recipes;
 
 public class DemonicChestplate extends DemonicArmor {
 
     public DemonicChestplate() {
-        super(DemonicExpansion.getInstance().getItems().DEMONIC_CHESTPLATE, new ItemStack(Material.NETHERITE_CHESTPLATE));
+        super(DemonicExpansion.getInstance().getItems().DEMONIC_CHESTPLATE, Recipes.DEMONIC_CHESTPLATE);
     }
 
     @Override

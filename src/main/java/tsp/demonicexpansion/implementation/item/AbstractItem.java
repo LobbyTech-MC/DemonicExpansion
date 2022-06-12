@@ -9,6 +9,7 @@ import io.github.thebusybiscuit.slimefun4.core.handlers.ItemUseHandler;
 import org.bukkit.inventory.ItemStack;
 import tsp.demonicexpansion.DemonicExpansion;
 import tsp.demonicexpansion.implementation.group.Groups;
+import tsp.demonicexpansion.implementation.recipe.DemonicRecipe;
 
 import java.util.List;
 
@@ -18,6 +19,10 @@ public class AbstractItem extends SlimefunItem {
 
     public AbstractItem(SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {
         super(Groups.MAIN, item, recipeType, recipe);
+    }
+
+    public AbstractItem(SlimefunItemStack item, DemonicRecipe recipe) {
+        super(Groups.MAIN, item, recipe.type(), recipe.recipe());
     }
 
     public void onRightClick(PlayerRightClickEvent event) {}

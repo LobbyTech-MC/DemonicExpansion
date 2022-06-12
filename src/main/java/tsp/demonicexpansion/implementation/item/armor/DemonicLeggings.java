@@ -1,16 +1,15 @@
 package tsp.demonicexpansion.implementation.item.armor;
 
-import org.bukkit.Material;
 import org.bukkit.entity.LivingEntity;
-import org.bukkit.inventory.ItemStack;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 import tsp.demonicexpansion.DemonicExpansion;
+import tsp.demonicexpansion.implementation.recipe.Recipes;
 
 public class DemonicLeggings extends DemonicArmor {
 
     public DemonicLeggings() {
-        super(DemonicExpansion.getInstance().getItems().DEMONIC_LEGGINGS, new ItemStack(Material.NETHERITE_LEGGINGS));
+        super(DemonicExpansion.getInstance().getItems().DEMONIC_LEGGINGS, Recipes.DEMONIC_LEGGINGS);
     }
 
     @Override

@@ -27,7 +27,7 @@ public class EntityDamageListener extends Handler {
                 .ifPresent(entity -> entity.onDamageDealt(event));
 
         // onDamageReceived - Victim
-        PersistentDataAPI.getOptionalString(event.getEntity(), DemonicEntity.ENTITY_ID)
+        PersistentDataAPI.getOptionalString(event.getVictim(), DemonicEntity.ENTITY_ID)
                 .flatMap(id -> manager.getEntity(NamespacedKey.fromString(id)))
                 .ifPresent(entity -> entity.onDamageReceived(event));
 

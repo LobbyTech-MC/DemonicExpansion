@@ -1,8 +1,6 @@
 package tsp.demonicexpansion.implementation.item.misc;
 
 import io.github.thebusybiscuit.slimefun4.api.events.PlayerRightClickEvent;
-import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
-import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.data.persistent.PersistentDataAPI;
 import io.github.thebusybiscuit.slimefun4.libraries.paperlib.PaperLib;
 import org.bukkit.Location;
@@ -12,11 +10,11 @@ import org.bukkit.World;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.event.player.PlayerTeleportEvent;
-import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import tsp.demonicexpansion.DemonicExpansion;
 import tsp.demonicexpansion.implementation.item.AbstractItem;
 import tsp.demonicexpansion.implementation.item.DemonicItemStack;
+import tsp.demonicexpansion.implementation.recipe.Recipes;
 import tsp.smartplugin.player.PlayerUtils;
 import tsp.smartplugin.utils.ItemUtils;
 import tsp.smartplugin.utils.SerializationUtils;
@@ -25,16 +23,11 @@ import java.util.Optional;
 
 public class PentecostalCoin extends AbstractItem {
 
-    private static final DemonicItemStack essence = DemonicExpansion.getInstance().getItems().DEMONIC_ESSENCE;
     private final NamespacedKey NORMAL_LOCATION = new NamespacedKey(DemonicExpansion.getInstance(), "anchor_normal");
     private final NamespacedKey NETHER_LOCATION = new NamespacedKey(DemonicExpansion.getInstance(), "anchor_nether");
     
     public PentecostalCoin() {
-        super(DemonicExpansion.getInstance().getItems().PENTECOSTAL_COIN, RecipeType.ANCIENT_ALTAR, new ItemStack[]{
-                essence, SlimefunItems.ENRICHED_NETHER_ICE, essence,
-                SlimefunItems.STRANGE_NETHER_GOO, SlimefunItems.PORTABLE_TELEPORTER, SlimefunItems.STRANGE_NETHER_GOO,
-                essence, SlimefunItems.ENRICHED_NETHER_ICE, essence
-        });
+        super(DemonicExpansion.getInstance().getItems().PENTECOSTAL_COIN, Recipes.PENTECOSTAL_COIN);
     }
 
     @Override
