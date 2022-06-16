@@ -34,7 +34,7 @@ public class DevilsRing extends DemonicWeapon implements Unburnable {
                 entity.setFireTicks(40);
             }
             event.getPlayer().playSound(event.getPlayer().getLocation(), Sound.ENTITY_ELDER_GUARDIAN_CURSE, 1f, 1f);
-        }, left -> PlayerUtils.sendMessage(event.getPlayer(), "&c您不能将这个换为另一个: &e" + left + "s")); // No sound because it would be deafening when spammed on cooldown.
+        }, left -> PlayerUtils.sendMessage(event.getPlayer(), "&c您不能将此替换为另一个: &e" + left + "s")); // No sound because it would be deafening when spammed on cooldown.
     }
 
 }
