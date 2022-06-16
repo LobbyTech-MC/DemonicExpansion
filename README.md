@@ -1,4 +1,4 @@
-# Nether Enhancement Addon
+# 魑魅拓展
 The main goal is to enhance the nether experience by adding items/mobs.
 
 # Requirements
