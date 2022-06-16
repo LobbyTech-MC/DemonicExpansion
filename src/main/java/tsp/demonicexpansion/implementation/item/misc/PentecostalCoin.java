@@ -39,7 +39,7 @@ public class PentecostalCoin extends AbstractItem {
         if (player.isSneaking()) {
             Optional<Block> block = event.getClickedBlock();
             if (block.isEmpty()) {
-                PlayerUtils.sendMessage(player, "&cYou must right click a block to anchor yourself to!");
+                PlayerUtils.sendMessage(player, "&c您必须右击所要定位的方块!");
                 return;
             }
 
@@ -55,10 +55,10 @@ public class PentecostalCoin extends AbstractItem {
                 Location location = block.get().getLocation();
                 PersistentDataAPI.setString(meta, key, SerializationUtils.serializeLocation(location));
                 event.getItem().setItemMeta(meta);
-                PlayerUtils.sendMessage(player, "&7Anchor set at: &ex=" + location.getBlockX() + " y=" + location.getBlockY() + " z=" + location.getBlockZ());
+                PlayerUtils.sendMessage(player, "&7已将定位设置为: &ex=" + location.getBlockX() + " y=" + location.getBlockY() + " z=" + location.getBlockZ());
                 player.playSound(player.getLocation(), Sound.BLOCK_ANVIL_LAND, 1f, 1f);
             } else {
-                PlayerUtils.sendMessage(player, "&cYou can not set an anchor in this world!");
+                PlayerUtils.sendMessage(player, "&c您无法在此世界设置位置!");
                 event.getPlayer().playSound(event.getPlayer().getLocation(), Sound.BLOCK_ANVIL_BREAK, 1f, 1f);
             }
             return;
@@ -78,20 +78,20 @@ public class PentecostalCoin extends AbstractItem {
                 ItemUtils.use(event.getItem(), 60, cd -> {
                     if (PaperLib.isPaper()) {
                         PaperLib.teleportAsync(player, SerializationUtils.deserializeLocation(serialized.get()), PlayerTeleportEvent.TeleportCause.PLUGIN).whenComplete((r, ex) -> {
-                            PlayerUtils.sendMessage(player, "&5Woosh!");
+                            PlayerUtils.sendMessage(player, "&5芜湖!");
                             player.playSound(player.getLocation(), Sound.ENTITY_ENDERMAN_TELEPORT, 1f, 1f);
                         });
                     } else {
                         player.teleport(SerializationUtils.deserializeLocation(serialized.get()), PlayerTeleportEvent.TeleportCause.PLUGIN);
                         player.playSound(player.getLocation(), Sound.ENTITY_ENDERMAN_TELEPORT, 1f, 1f);
                     }
-                }, left -> PlayerUtils.sendMessage(event.getPlayer(), "&cYou can not use this for another: &e" + left + "s"));
+                }, left -> PlayerUtils.sendMessage(event.getPlayer(), "&c您不能将此替换为另一个: &e" + left + "s"));
             } else {
-                PlayerUtils.sendMessage(player, "&cYou have not set an anchor to go back to!");
+                PlayerUtils.sendMessage(player, "&c您还没有设置要返回的位置!");
                 event.getPlayer().playSound(event.getPlayer().getLocation(), Sound.BLOCK_ANVIL_BREAK, 1f, 1f);
             }
         } else {
-            PlayerUtils.sendMessage(player, "&cThe coin may not be used in this world!");
+            PlayerUtils.sendMessage(player, "&c该物品无法在此世界使用!");
             event.getPlayer().playSound(event.getPlayer().getLocation(), Sound.BLOCK_ANVIL_BREAK, 1f, 1f);
         }
     }
