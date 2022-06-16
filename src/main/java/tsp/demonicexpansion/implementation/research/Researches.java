@@ -7,7 +7,7 @@ public class Researches {
 
     public final DemonicResearch HELL = new DemonicResearch(
             "hell",
-            "Hell let loose.",
+            "魔鬼在地狱中怒吼",
             30
     );
 
