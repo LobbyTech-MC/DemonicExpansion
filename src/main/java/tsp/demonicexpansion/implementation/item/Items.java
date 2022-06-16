@@ -22,22 +22,22 @@ public class Items {
     public final DemonicItemStack DEMONIC_ESSENCE = new DemonicItemStack(
             "DEMONIC_ESSENCE",
             Material.PURPLE_DYE,
-            "&cDemonic Essence"
+            "&c恶魔之心"
     );
 
     public final DemonicItemStack PENTECOSTAL_COIN = new DemonicItemStack(
             "PENTECOSTAL_COIN",
             Material.ORANGE_DYE,
-            "&cPentecostal Coin",
+            "&c五旬节硬币",
             "",
-            "&7Shift-Right-Click the top of a block to anchor yourself to that location. (World & Nether)",
-            "&7Right-Click to travel to the nether and back. (60s)"
+            "&7Shift+右击 在当前方块顶端锁定该位置(主世界 & 下界)",
+            "&7右击 传送至下界一段时间后再传送回来(60s)"
     );
 
     public final DemonicItemStack NAPALM = new DemonicItemStack(
             "NAPALM",
             Material.GREEN_DYE,
-            "&2Napalm"
+            "&2凝固汽油"
     );
 
     // Armor
@@ -45,33 +45,33 @@ public class Items {
     public final DemonicItemStack DEMONIC_HELMET = new DemonicItemStack(
             "DEMONIC_HELMET",
             Material.NETHERITE_HELMET,
-            "&cDemonic Helmet",
+            "&c魑魅头盔",
             "",
-            "&6Enlightened: &7Gain &9Night Vision&."
+            "&6窥探: &7获得 &9夜视"
     );
 
     public final DemonicItemStack DEMONIC_CHESTPLATE = new DemonicItemStack(
             "DEMONIC_CHESTPLATE",
             Material.NETHERITE_CHESTPLATE,
-            "&cDemonic Chestplate",
+            "&c魑魅胸甲",
             "",
-            "&6Demon Shade: &7Gain &6Fire Resistance&7."
+            "&6夜隐: &7获得 &6抗火"
     );
 
     public final DemonicItemStack DEMONIC_LEGGINGS = new DemonicItemStack(
             "DEMONIC_LEGGINGS",
             Material.NETHERITE_LEGGINGS,
-            "&cDemonic Leggings",
+            "&c魑魅护腿",
             "",
-            "&6Recovery: &7Gain &cRegeneration 2&7."
+            "&6寻觅: &7获得 &c生命恢复2"
     );
 
     public final DemonicItemStack DEMONIC_BOOTS = new DemonicItemStack(
             "DEMONIC_BOOTS",
             Material.NETHERITE_BOOTS,
-            "&cDemonic Boots",
+            "&c魑魅靴子",
             "",
-            "&6Lava Walker: &7Turns lava around you into obsidian &cpermanently&7!"
+            "&6岩浆行者: &7将周围的岩浆永久性的变为黑曜石!"
     );
 
     // Weapon
@@ -79,9 +79,9 @@ public class Items {
     public final DemonicItemStack DEVILS_RING = new DemonicItemStack(
             "DEVILS_RING",
             Material.RED_DYE,
-            "&cDevils Ring",
+            "&c魑魅之戒",
             "",
-            "&6Active - Paranoia: &7Blind, weaken and burn nearby enemies. (60s)"
+            "&6主动技能: &7使周围的敌人失明、虚弱、燃烧(60s)"
     );
 
     // Machines
@@ -89,9 +89,10 @@ public class Items {
     public final DemonicItemStack THERMAL_GENERATOR = new DemonicItemStack(
             "THERMAL_GENERATOR",
             HeadTexture.GENERATOR,
-            "&cThermal Generator",
+            "&c魑魅发电机",
             "",
-            "&7Generates energy in the nether. Must be placed above &6lava&7."
+            "&7可在下界发电",
+            "&7必须放置在岩浆上方"
     );
 
     public void setup() {
