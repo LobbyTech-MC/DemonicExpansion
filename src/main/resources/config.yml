@@ -6,3 +6,5 @@ ticker:
 
 # Debug Mode
 debug: false
+
+auto-update: true

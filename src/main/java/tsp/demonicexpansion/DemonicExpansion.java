@@ -1,6 +1,7 @@
 package tsp.demonicexpansion;
 
 import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
+import net.guizhanss.guizhanlib.updater.GuizhanBuildsUpdater;
 import org.bukkit.plugin.java.JavaPlugin;
 import tsp.demonicexpansion.command.DXCommand;
 import tsp.demonicexpansion.implementation.entity.Entities;
@@ -35,6 +36,11 @@ public class DemonicExpansion extends SmartPlugin implements SlimefunAddon {
         this.logger = new Logger(getConfig().getBoolean("debug"));
         logger.info("Loading DemonicExpansion - " + getPluginVersion());
         saveDefaultConfig();
+
+        logger.debug("Checking auto-update...");
+        if (getConfig().getBoolean("auto-update") && getDescription().getVersion().startsWith("Build")) {
+            new GuizhanBuildsUpdater(this, getFile(), "SlimefunGuguProject", "DemonicExpansion", "master", false, "zh-CN").start();
+        }
 
         logger.debug("Loading items...");
         Groups.MAIN.register(DemonicExpansion.getInstance());
