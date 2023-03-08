@@ -1,8 +1,12 @@
 package tsp.demonicexpansion;
 
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
+
+import org.bukkit.plugin.java.JavaPlugin;
+
 import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
 import net.guizhanss.guizhanlib.updater.GuizhanBuildsUpdater;
-import org.bukkit.plugin.java.JavaPlugin;
 import tsp.demonicexpansion.command.DXCommand;
 import tsp.demonicexpansion.implementation.entity.Entities;
 import tsp.demonicexpansion.implementation.entity.EntityManager;
@@ -18,9 +22,6 @@ import tsp.demonicexpansion.task.EntityTask;
 import tsp.demonicexpansion.util.Logger;
 import tsp.smartplugin.SmartPlugin;
 import tsp.smartplugin.event.EntityDamageByEntityListener;
-
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
 
 public class DemonicExpansion extends SmartPlugin implements SlimefunAddon {
 

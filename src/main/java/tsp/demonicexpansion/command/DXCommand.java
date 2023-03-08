@@ -9,17 +9,17 @@ import tsp.smartplugin.player.PlayerUtils;
 public class DXCommand extends SmartCommand {
 
     public DXCommand() {
-        super("dx", "dx.command.use", "&cNo permission!");
+        super("dx", "dx.command.use", "&c没有权限!");
     }
 
     @Override
     public void handle(CommandSender sender, String[] args) {
         if (!(sender instanceof Player player)) {
-            PlayerUtils.sendMessage(sender, "&cOnly for in-game players!");
+            PlayerUtils.sendMessage(sender, "&c仅限在线玩家!");
             return;
         }
         if (args.length == 0) {
-            PlayerUtils.sendMessage(player, "&cYou need to specify an entity! Usage: &e/dx <entity>");
+            PlayerUtils.sendMessage(player, "&c你需要指定一个实体! 使用方法: &e/dx <entity>");
         }
 
         String name = args[0];
@@ -32,7 +32,7 @@ public class DXCommand extends SmartCommand {
         } else if (name.equalsIgnoreCase("hellhound")) {
             Entities.HELLHOUND.spawn(player.getLocation());
         } else {
-            PlayerUtils.sendMessage(player, "&cUnknown entity: &e" + name);
+            PlayerUtils.sendMessage(player, "&c未知实体: &e" + name);
         }
     }
 
