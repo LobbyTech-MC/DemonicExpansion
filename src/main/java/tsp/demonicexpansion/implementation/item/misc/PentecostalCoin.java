@@ -1,8 +1,7 @@
 package tsp.demonicexpansion.implementation.item.misc;
 
-import io.github.thebusybiscuit.slimefun4.api.events.PlayerRightClickEvent;
-import io.github.thebusybiscuit.slimefun4.libraries.dough.data.persistent.PersistentDataAPI;
-import io.github.thebusybiscuit.slimefun4.libraries.paperlib.PaperLib;
+import java.util.Optional;
+
 import org.bukkit.Location;
 import org.bukkit.NamespacedKey;
 import org.bukkit.Sound;
@@ -11,15 +10,16 @@ import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.event.player.PlayerTeleportEvent;
 import org.bukkit.inventory.meta.ItemMeta;
+
+import io.github.thebusybiscuit.slimefun4.api.events.PlayerRightClickEvent;
+import io.github.thebusybiscuit.slimefun4.libraries.dough.data.persistent.PersistentDataAPI;
+import io.github.thebusybiscuit.slimefun4.libraries.paperlib.PaperLib;
 import tsp.demonicexpansion.DemonicExpansion;
 import tsp.demonicexpansion.implementation.item.AbstractItem;
-import tsp.demonicexpansion.implementation.item.DemonicItemStack;
 import tsp.demonicexpansion.implementation.recipe.Recipes;
 import tsp.smartplugin.player.PlayerUtils;
 import tsp.smartplugin.utils.ItemUtils;
 import tsp.smartplugin.utils.SerializationUtils;
-
-import java.util.Optional;
 
 public class PentecostalCoin extends AbstractItem {
 

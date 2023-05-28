@@ -1,21 +1,20 @@
 package tsp.demonicexpansion.implementation.entity;
 
-import lombok.Data;
+import java.util.HashMap;
+
 import org.bukkit.Location;
 import org.bukkit.NamespacedKey;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Zombie;
+
+import io.github.thebusybiscuit.slimefun4.libraries.dough.data.persistent.PersistentDataAPI;
+import lombok.Data;
 import tsp.demonicexpansion.DemonicExpansion;
 import tsp.smartplugin.event.LivingEntityDamageByLivingEntityEvent;
 import tsp.smartplugin.utils.AttributeUtils;
-
-import io.github.thebusybiscuit.slimefun4.libraries.dough.data.persistent.PersistentDataAPI;
-import tsp.smartplugin.utils.SerializationUtils;
 import tsp.smartplugin.utils.StringUtils;
 import tsp.smartplugin.utils.Validate;
-
-import java.util.HashMap;
 
 @Data
 public class DemonicEntity {
@@ -46,7 +45,12 @@ public class DemonicEntity {
         location.getWorld().spawn(location, getEntityClass(), false, entity -> {
             PersistentDataAPI.setString(entity, ENTITY_ID, getKey().toString());
 
-            AttributeUtils.setAttributes(entity, new HashMap<>() {{
+            AttributeUtils.setAttributes(entity, new HashMap<>() {/**
+				 * 
+				 */
+				private static final long serialVersionUID = -2476804853315333514L;
+
+			{
                 put(Attribute.GENERIC_MAX_HEALTH, getMaxHealth());
                 put(Attribute.GENERIC_ATTACK_DAMAGE, getAttackDamage());
                 put(Attribute.GENERIC_ATTACK_KNOCKBACK, getAttackKnockback());
@@ -55,7 +59,9 @@ public class DemonicEntity {
                 put(Attribute.GENERIC_FOLLOW_RANGE, getFollowRanage());
                 put(Attribute.GENERIC_ARMOR, getArmor());
                 put(Attribute.GENERIC_ARMOR_TOUGHNESS, getArmorToughness());
-            }});
+            }
+
+			});
             entity.setHealth(getHealth());
 
             entity.setCustomName(StringUtils.colorize("&c" + getName()));
@@ -67,7 +73,67 @@ public class DemonicEntity {
         });
     }
 
-    public void preSpawn(LivingEntity entity) {}
+    public double getHealth() {
+		// TODO Auto-generated method stub
+		return health;
+	}
+
+    public String getName() {
+		// TODO Auto-generated method stub
+		return name;
+	}
+
+    public NamespacedKey getKey() {
+		// TODO Auto-generated method stub
+		return key;
+	}
+
+    public Class<? extends LivingEntity> getEntityClass() {
+		// TODO Auto-generated method stub
+		return entityClass;
+	}
+
+    public double getMaxHealth() {
+		// TODO Auto-generated method stub
+		return maxHealth;
+	}
+
+    public double getArmorToughness() {
+		// TODO Auto-generated method stub
+		return armorToughness;
+	}
+
+    public double getArmor() {
+		// TODO Auto-generated method stub
+		return armor;
+	}
+
+    public double getFollowRanage() {
+		// TODO Auto-generated method stub
+		return followRanage;
+	}
+
+    public double getKnockbackResistance() {
+		// TODO Auto-generated method stub
+		return knockbackResistance;
+	}
+
+    public double getMovementSpeed() {
+		// TODO Auto-generated method stub
+		return movementSpeed;
+	}
+
+    public double getAttackKnockback() {
+		// TODO Auto-generated method stub
+		return attackKnockback;
+	}
+
+    public double getAttackDamage() {
+		// TODO Auto-generated method stub
+		return attackDamage;
+	}
+	
+	public void preSpawn(LivingEntity entity) {}
 
     public void tick(LivingEntity entity) {}
 
