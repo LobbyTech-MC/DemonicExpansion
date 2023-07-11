@@ -1,14 +1,14 @@
 package tsp.demonicexpansion.implementation.entity;
 
+import java.util.concurrent.ThreadLocalRandom;
+
 import org.bukkit.NamespacedKey;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.MagmaCube;
-import org.bukkit.entity.Projectile;
 import org.bukkit.event.entity.EntityDamageEvent;
+
 import tsp.demonicexpansion.DemonicExpansion;
 import tsp.smartplugin.event.LivingEntityDamageByLivingEntityEvent;
-
-import java.util.concurrent.ThreadLocalRandom;
 
 public class Vulcan extends DemonicEntity {
 
